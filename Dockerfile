@@ -1,6 +1,6 @@
 FROM python:alpine as builder
-RUN useradd -m appuser && echo \"appuser:appuser\" | chpasswd && adduser appuser sudo
-USER appuser
+RUN useradd -m 10001 && echo \"10001:10001\" | chpasswd && 10001 10001 sudo
+USER 10001
 RUN apk update && apk add  --no-cache tzdata ca-certificates
 ADD requirements.txt /tmp/
 RUN pip3 install --user -r /tmp/requirements.txt
